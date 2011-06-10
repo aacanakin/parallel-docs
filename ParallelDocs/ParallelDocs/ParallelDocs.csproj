@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A69FAB05-AB18-45D1-8821-25C2DACE2A6B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ParallelDocs</RootNamespace>
+    <AssemblyName>ParallelDocs</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GUI\FirstRunScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FirstRunScreen.Designer.cs">
+      <DependentUpon>FirstRunScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MainScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MainScreen.Designer.cs">
+      <DependentUpon>MainScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\GUIManager.cs" />
+    <Compile Include="GUI\ShareScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ShareScreen.Designer.cs">
+      <DependentUpon>ShareScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logic\ConnectionManager.cs" />
+    <Compile Include="Logic\Document.cs" />
+    <Compile Include="Logic\DocumentManager.cs" />
+    <Compile Include="Logic\DocumentMessage.cs" />
+    <Compile Include="Logic\Profile.cs" />
+    <Compile Include="Logic\ProfileManager.cs" />
+    <Compile Include="ParallelDocs\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\FirstRunScreen.resx">
+      <DependentUpon>FirstRunScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MainScreen.resx">
+      <DependentUpon>MainScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ShareScreen.resx">
+      <DependentUpon>ShareScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\DataSources\ParallelDocs.Chat.Client.datasource" />
+    <None Include="Properties\DataSources\ParallelDocs.Chat.ClientList.datasource" />
+    <None Include="Properties\DataSources\ParallelDocs.Chat.Form1.datasource" />
+    <None Include="Properties\DataSources\ParallelDocs.Chat.MessageEventArgs.datasource" />
+    <None Include="Properties\DataSources\ParallelDocs.GUI.FirstRunScreen.datasource" />
+    <None Include="Properties\DataSources\ParallelDocs.GUI.GUIManager.datasource" />
+    <None Include="Properties\DataSources\ParallelDocs.GUI.mainScreen.datasource" />
+    <None Include="Properties\DataSources\ParallelDocs.GUI.ShareScreen.datasource" />
+    <None Include="Properties\DataSources\ParallelDocs.Logic.ConnectionManager.datasource" />
+    <None Include="Properties\DataSources\ParallelDocs.Logic.Document.datasource" />
+    <None Include="Properties\DataSources\ParallelDocs.Logic.DocumentManager.datasource" />
+    <None Include="Properties\DataSources\ParallelDocs.Logic.ProfileManager.datasource" />
+    <None Include="Properties\DataSources\ParallelDocs.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\ParallelDocs.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\ParallelDos.Chat.Form1.datasource" />
+    <None Include="Properties\DataSources\Profile.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\1303234738_New_File.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\1303234770_user-home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\1303234799_filesave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\1303234855_applix.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\1303234886_share.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\1303234949_document-properties.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\1303235076_filesaveas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\save as Icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\save as Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="todo\sorunlar.txt" />
+    <Content Include="todo\yapılcak.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
